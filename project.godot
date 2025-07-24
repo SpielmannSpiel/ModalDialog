@@ -1,0 +1,30 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Modal Dialog"
+config/version="0.0.1"
+run/main_scene="uid://dsbkih4b5slji"
+config/features=PackedStringArray("4.4", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+ModalDialogGlobal="*res://addons/ModalDialog/scenes/globals/modal_dialog_global.tscn"
+
+[dotnet]
+
+project/assembly_name="Modal Dialog"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

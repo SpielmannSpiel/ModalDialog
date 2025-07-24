@@ -1,0 +1,93 @@
+[gd_scene load_steps=8 format=3 uid="uid://ckcrvh0thhqfd"]
+
+[ext_resource type="Script" uid="uid://bdvun4bpslfv8" path="res://addons/ModalDialog/examples/scripts/yes_no.gd" id="1_sf6md"]
+[ext_resource type="Script" uid="uid://dswq4frtk5som" path="res://addons/ModalDialog/scripts/data/ModalDialogOption.gd" id="2_m7bt5"]
+[ext_resource type="Script" uid="uid://d3qtyubrqghui" path="res://addons/ModalDialog/scripts/ModalDialogAutoWire.gd" id="3_m7bt5"]
+
+[sub_resource type="Resource" id="Resource_hl4mv"]
+script = ExtResource("2_m7bt5")
+option_label = "YES! I like Hamsters. Who doesn't?"
+option_data = "yes"
+metadata/_custom_type_script = "uid://dswq4frtk5som"
+
+[sub_resource type="Resource" id="Resource_y0vxj"]
+script = ExtResource("2_m7bt5")
+option_label = "NO, I am a monster."
+option_data = "no"
+metadata/_custom_type_script = "uid://dswq4frtk5som"
+
+[sub_resource type="Resource" id="Resource_2ogs8"]
+script = ExtResource("2_m7bt5")
+option_label = "YES! I like Hamsters. Who doesn't?"
+option_data = "y"
+metadata/_custom_type_script = "uid://dswq4frtk5som"
+
+[sub_resource type="Resource" id="Resource_djcgg"]
+script = ExtResource("2_m7bt5")
+option_label = "NO, I am a monster."
+option_data = "n"
+metadata/_custom_type_script = "uid://dswq4frtk5som"
+
+[node name="DialogYesNoAutoWire" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="mcp" type="Node" parent="."]
+
+[node name="yes_no_auto_wire" type="Node" parent="mcp" node_paths=PackedStringArray("answer_box")]
+script = ExtResource("1_sf6md")
+options = Array[ExtResource("2_m7bt5")]([SubResource("Resource_hl4mv"), SubResource("Resource_y0vxj")])
+options_direct = Array[ExtResource("2_m7bt5")]([SubResource("Resource_2ogs8"), SubResource("Resource_djcgg")])
+answer_box = NodePath("../../rtlAnswerBox")
+
+[node name="ModalDialogAutoWire" type="Node" parent="mcp"]
+script = ExtResource("3_m7bt5")
+metadata/_custom_type_script = "uid://d3qtyubrqghui"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 256.0
+offset_bottom = 192.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Dialog Tester Yes No AutoWire"
+horizontal_alignment = 1
+
+[node name="btnShowGlobalDialogSimple" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 48.0
+offset_right = 224.0
+offset_bottom = 79.0
+text = "Show Global Dialog"
+
+[node name="btnShowGlobalDialogDirect" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 96.0
+offset_right = 224.0
+offset_bottom = 127.0
+text = "Show Global Dialog Direct"
+
+[node name="rtlAnswerBox" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 16.0
+offset_right = 1088.0
+offset_bottom = 192.0
+bbcode_enabled = true
+text = "-"
+
+[connection signal="pressed" from="Panel/btnShowGlobalDialogSimple" to="mcp/yes_no_auto_wire" method="show_dialog_global_simple"]
+[connection signal="pressed" from="Panel/btnShowGlobalDialogDirect" to="mcp/yes_no_auto_wire" method="show_dialog_global_direct"]

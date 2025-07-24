@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvxoj05gr1rhq"]
+
+[ext_resource type="Script" uid="uid://cuq702xekr0bx" path="res://addons/ModalDialog/scripts/ModalDialogGlobal.gd" id="1_gmfe8"]
+[ext_resource type="PackedScene" uid="uid://bhi884dgjast3" path="res://addons/ModalDialog/scenes/modal_dialog.tscn" id="2_aljxv"]
+
+[node name="ModalDialogGlobal" type="CanvasLayer" node_paths=PackedStringArray("modal_dialog")]
+script = ExtResource("1_gmfe8")
+modal_dialog = NodePath("ModalDialog")
+
+[node name="ModalDialog" parent="." instance=ExtResource("2_aljxv")]

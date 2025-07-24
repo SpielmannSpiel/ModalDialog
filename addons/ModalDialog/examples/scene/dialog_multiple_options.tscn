@@ -1,0 +1,126 @@
+[gd_scene load_steps=12 format=3 uid="uid://deo42wsbn84tb"]
+
+[ext_resource type="Script" uid="uid://d3qtyubrqghui" path="res://addons/ModalDialog/scripts/ModalDialogAutoWire.gd" id="1_g3ss4"]
+[ext_resource type="Script" uid="uid://dt2c5bendcksp" path="res://addons/ModalDialog/examples/scripts/multiple_options.gd" id="1_ynrux"]
+[ext_resource type="Script" uid="uid://dswq4frtk5som" path="res://addons/ModalDialog/scripts/data/ModalDialogOption.gd" id="2_j1xmt"]
+
+[sub_resource type="Resource" id="Resource_lp25y"]
+script = ExtResource("2_j1xmt")
+option_label = "Ok"
+option_data = "ok"
+metadata/_custom_type_script = "uid://dswq4frtk5som"
+
+[sub_resource type="Resource" id="Resource_ynrux"]
+script = ExtResource("2_j1xmt")
+option_label = "Cute"
+option_data = "0"
+metadata/_custom_type_script = "uid://dswq4frtk5som"
+
+[sub_resource type="Resource" id="Resource_j1xmt"]
+script = ExtResource("2_j1xmt")
+option_label = "Awesome"
+option_data = "1"
+metadata/_custom_type_script = "uid://dswq4frtk5som"
+
+[sub_resource type="Resource" id="Resource_4qdcb"]
+script = ExtResource("2_j1xmt")
+option_label = "Small"
+option_data = "3"
+metadata/_custom_type_script = "uid://dswq4frtk5som"
+
+[sub_resource type="Resource" id="Resource_3ojyf"]
+script = ExtResource("2_j1xmt")
+option_label = "Dr Who"
+option_data = "1"
+metadata/_custom_type_script = "uid://dswq4frtk5som"
+
+[sub_resource type="Resource" id="Resource_4i1up"]
+script = ExtResource("2_j1xmt")
+option_label = "Star Trek"
+option_data = "2"
+metadata/_custom_type_script = "uid://dswq4frtk5som"
+
+[sub_resource type="Resource" id="Resource_firht"]
+script = ExtResource("2_j1xmt")
+option_label = "Star Wars"
+option_data = "3"
+metadata/_custom_type_script = "uid://dswq4frtk5som"
+
+[sub_resource type="Resource" id="Resource_dmorl"]
+script = ExtResource("2_j1xmt")
+option_label = "Pinky & Brain"
+option_data = "4"
+metadata/_custom_type_script = "uid://dswq4frtk5som"
+
+[node name="DialogMultipleOptions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="mcp" type="Node" parent="."]
+
+[node name="multiple_options" type="Node" parent="mcp" node_paths=PackedStringArray("answer_box")]
+script = ExtResource("1_ynrux")
+options_single = SubResource("Resource_lp25y")
+options_3 = Array[ExtResource("2_j1xmt")]([SubResource("Resource_ynrux"), SubResource("Resource_j1xmt"), SubResource("Resource_4qdcb")])
+options_4 = Array[ExtResource("2_j1xmt")]([SubResource("Resource_3ojyf"), SubResource("Resource_4i1up"), SubResource("Resource_firht"), SubResource("Resource_dmorl")])
+answer_box = NodePath("../../rtlAnswerBox")
+
+[node name="ModalDialogAutoWire" type="Node" parent="mcp"]
+script = ExtResource("1_g3ss4")
+metadata/_custom_type_script = "uid://d3qtyubrqghui"
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 256.0
+offset_bottom = 208.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Dialog Tester Multiple Options"
+horizontal_alignment = 1
+
+[node name="btnShowSingle" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 48.0
+offset_right = 224.0
+offset_bottom = 79.0
+text = "Show Single"
+
+[node name="btnShow3" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 96.0
+offset_right = 224.0
+offset_bottom = 127.0
+text = "Show 3"
+
+[node name="btnShow4" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 144.0
+offset_right = 224.0
+offset_bottom = 175.0
+text = "Show 4"
+
+[node name="rtlAnswerBox" type="RichTextLabel" parent="."]
+offset_left = 320.0
+offset_top = 16.0
+offset_right = 1088.0
+offset_bottom = 208.0
+bbcode_enabled = true
+text = "-"
+
+[connection signal="dialog_chosen" from="mcp/ModalDialogAutoWire" to="mcp/multiple_options" method="users_choice"]
+[connection signal="pressed" from="Panel/btnShowSingle" to="mcp/multiple_options" method="show_single"]
+[connection signal="pressed" from="Panel/btnShow3" to="mcp/multiple_options" method="show_3"]
+[connection signal="pressed" from="Panel/btnShow4" to="mcp/multiple_options" method="show_4"]

@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhi884dgjast3"]
+
+[ext_resource type="Script" uid="uid://b7a51s06jsh3j" path="res://addons/ModalDialog/scripts/ModalDialog.gd" id="1_prxqt"]
+
+[node name="ModalDialog" type="Panel" node_paths=PackedStringArray("dialog_title", "dialog_text", "button_target", "size_container")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_prxqt")
+dialog_title = NodePath("CenterContainer/pnlSizeContainers/MarginContainer/VBoxContainer/lblTitle")
+dialog_text = NodePath("CenterContainer/pnlSizeContainers/MarginContainer/VBoxContainer/rtlText")
+button_target = NodePath("CenterContainer/pnlSizeContainers/MarginContainer/VBoxContainer/pnlOptions")
+size_container = NodePath("CenterContainer/pnlSizeContainers")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="pnlSizeContainers" type="PanelContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/pnlSizeContainers"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/pnlSizeContainers/MarginContainer"]
+layout_mode = 2
+
+[node name="lblTitle" type="Label" parent="CenterContainer/pnlSizeContainers/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "TITLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="rtlText" type="RichTextLabel" parent="CenterContainer/pnlSizeContainers/MarginContainer/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "HERE BE DUMMY TEXT
+[b]Multi Line[/b]"
+fit_content = true
+autowrap_mode = 0
+
+[node name="pnlOptions" type="PanelContainer" parent="CenterContainer/pnlSizeContainers/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CenterContainer/pnlSizeContainers/MarginContainer/VBoxContainer/pnlOptions"]
+layout_mode = 2
+text = "DUMMY"
