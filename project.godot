@@ -11,10 +11,10 @@ config_version=5
 [application]
 
 config/name="Modal Dialog"
-config/version="0.0.1"
+config/version="0.0.2"
 run/main_scene="uid://dsbkih4b5slji"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://gpu0yhuebb8p"
 
 [autoload]
 
