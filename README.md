@@ -13,6 +13,15 @@ A modal dialog system for Godot.
 * Different layouts for options
 * Signals per ModalDialogAutoWire node or code
 
+## Screenshots
+
+
+
+| ![dialog example 1 option](screenshots/dialog_1.png) | ![dialog example 2 option](screenshots/dialog_2.png) |
+| ![dialog example 3 option](screenshots/dialog_3.png) | ![dialog example 4 option](screenshots/dialog_4.png) |
+
+![dialog data example](screenshots/options_data_ui.png) 
+
 ## Setup
 
 To make ModalDialog globally available, set the `modal_dialog_global.tscn` scene global as `ModalDialogGlobal`.  
