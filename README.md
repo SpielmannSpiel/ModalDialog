@@ -16,14 +16,14 @@ A modal dialog system for Godot.
 ## Screenshots
 
 <table>
-    <tr>
-        <td><img src="screenshots/dialog_1.png" alt="dialog example 1 option"></td>
-        <td><img src="screenshots/dialog_2.png" alt="dialog example 2 option"></td>
-    </tr>
-    <tr>
-        <td><img src="screenshots/dialog_3.png" alt="dialog example 3 option"></td>
-        <td><img src="screenshots/dialog_4.png" alt="dialog example 4 option"></td>
-    </tr>
+	<tr>
+		<td><img src="screenshots/dialog_1.png" alt="dialog example 1 option"></td>
+		<td><img src="screenshots/dialog_2.png" alt="dialog example 2 option"></td>
+	</tr>
+	<tr>
+		<td><img src="screenshots/dialog_3.png" alt="dialog example 3 option"></td>
+		<td><img src="screenshots/dialog_4.png" alt="dialog example 4 option"></td>
+	</tr>
 </table>
 
 ![dialog data example](screenshots/options_data_ui.png) 
