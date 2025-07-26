@@ -74,6 +74,7 @@ script = ExtResource("1_g3ss4")
 metadata/_custom_type_script = "uid://d3qtyubrqghui"
 
 [node name="Panel" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 16.0
 offset_top = 16.0
 offset_right = 256.0
@@ -113,6 +114,7 @@ offset_bottom = 175.0
 text = "Show 4"
 
 [node name="rtlAnswerBox" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 320.0
 offset_top = 16.0
 offset_right = 1088.0
