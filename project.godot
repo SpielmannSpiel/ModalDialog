@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Modal Dialog"
-config/version="0.0.2"
+config/version="0.0.3"
 run/main_scene="uid://dsbkih4b5slji"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="uid://gpu0yhuebb8p"
@@ -23,6 +23,10 @@ ModalDialogGlobal="*res://addons/ModalDialog/scenes/globals/modal_dialog_global.
 [dotnet]
 
 project/assembly_name="Modal Dialog"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/my_plugin/plugin.cfg")
 
 [rendering]
 
