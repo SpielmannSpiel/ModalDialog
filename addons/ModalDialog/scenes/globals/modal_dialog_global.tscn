@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bhi884dgjast3" path="res://addons/ModalDialog/scenes/modal_dialog.tscn" id="2_aljxv"]
 
 [node name="ModalDialogGlobal" type="CanvasLayer" node_paths=PackedStringArray("modal_dialog")]
+layer = 128
 script = ExtResource("1_gmfe8")
 modal_dialog = NodePath("ModalDialog")
 
