@@ -68,6 +68,7 @@ offset_bottom = 79.0
 text = "Show Global Dialog"
 
 [node name="btnShowGlobalDialogDirect" type="Button" parent="Panel"]
+layout_mode = 0
 offset_left = 16.0
 offset_top = 96.0
 offset_right = 224.0
