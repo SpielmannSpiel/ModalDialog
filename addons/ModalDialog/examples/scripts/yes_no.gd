@@ -19,8 +19,8 @@ func show_dialog_global_simple() -> void:
 	)
 
 func show_dialog_global_direct() -> void:
-	options_direct[0].option_function_call = Callable(self, "chosen_yes")
-	options_direct[1].option_function_call = Callable(self, "chosen_no")	
+	options_direct[0].option_function_call_no_params = Callable(self, "chosen_yes")
+	options_direct[1].option_function_call_no_params = Callable(self, "chosen_no")	
 
 	ModalDialogGlobal.modal_dialog.show_dialog(
 		"Question (Global, direct)",
@@ -38,5 +38,5 @@ func chosen(selected_option: ModalDialogOption) -> void:
 	print(selected_option)
 	answer_box.text = "chosen:\n" + selected_option.to_string() + "\n\n"
 	
-	if not selected_option.option_function_call.is_null():
-		selected_option.option_function_call.call()
+	if not selected_option.option_function_call_no_params.is_null():
+		selected_option.option_function_call_no_params.call()
