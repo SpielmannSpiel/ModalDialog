@@ -54,6 +54,6 @@ States that are considered "stable" enough will get a git-tag and be released to
 In the future I'd like merge requests and development on the development branch, but since it's currently "moving fast" I don't care so much (yet).  
 
 ## OTHER
-Godot Asset Library: -  
+Godot Asset Library: https://godotengine.org/asset-library/asset/4180  
 GitHub: https://github.com/SpielmannSpiel/ModalDialog  
 by bison - SpielmannSpiel https://spielmannspiel.com  
