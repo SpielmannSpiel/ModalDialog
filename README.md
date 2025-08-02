@@ -41,7 +41,7 @@ ModalDialog/addons/ModalDialog/scenes/globals/modal_dialog_global.tscn
 ## TODO
 
 * more samplee scenes
-  * lokal dialog
+  * local dialog
 * more dynamic button layouts
 * 100% UI-wiring without code
 
