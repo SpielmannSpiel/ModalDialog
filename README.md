@@ -40,9 +40,6 @@ ModalDialog/addons/ModalDialog/scenes/globals/modal_dialog_global.tscn
 
 ## TODO
 
-* installer
-  * set the global class automatically (needs dialog)
-* icon
 * more samplee scenes
   * lokal dialog
 * more dynamic button layouts
